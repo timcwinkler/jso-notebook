@@ -1,7 +1,8 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
-<title>jsn+help</title>
+<title>js+help</title>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -37,7 +38,7 @@ div:focus {
   display: inline-block;
   font-size: 1.1em;
   border: 1px inset #aaa;
-  width: 85%;
+  width: 95%;
   margin: 1px;
   padding: 2px;
   min-height: 1em;
@@ -62,7 +63,7 @@ div:focus {
   display:inline-block;
   font-size: 1.1em;
   border: 1px inset #aaa;
-  width: 85%;
+  width: 95%;
   margin: 1px;
   padding: 2px;
   min-height: 1em;
@@ -71,65 +72,36 @@ div:focus {
   word-wrap: break-word;
   resize: none;
 }
+
+.buttonactive {
+  appearance: push-button !important;
+  background-color: SkyBlue;
+}
 </style>
-</head>
-<body>
-
-<span id="heading" style="display:inline-block">jsn+help</span>
-
-<span style="display:inline-block;width:10%;"></span>
-<input type="button" value="add" onclick="add_block(event,this);">
-
-<span style="display:inline-block;vertical-align:top;float:right;padding-top:.5em">
-<input id="RORW" type="button" value="RO>RW" onclick="toggle_rw(event,this);">
-<input type="button" value="Clear" onclick="clear_content(event,this);">
-<input type="button" value="Store" onclick="store_content(event,this);">
-<input type="button" value="Restore" onclick="restore_content(event,this);">
-<a id="downloader" href="missing" download="missing" target="_blank"><input type="button" value="Save" onclick="store_content(event,this);"></a> <!--click happens first-->
-</span>
-
-<hr>
-
-<div id="content" contenteditable="false"><div id="b0">[0]:<span class="box1"><textarea id="b0_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;p&gt;When done with the documentation, use Clear to make a fresh start.&lt;/p&gt;</textarea><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><div><p>When done with the documentation, use Clear to make a fresh start.</p></div></span></div><p style="margin: 0.75em;"></p><div id="b1">[1]:<span class="box1"><textarea id="b1_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;div&gt;&lt;b&gt;Documentation for js.html&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Screenshot ...&lt;/b&gt;&lt;/div&gt;&lt;br&gt;&lt;hr&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span id="heading" style="display: inline-block;"&gt;js8&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; width: 129.766px;"&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="add"&gt;&lt;span style="font-size: medium;"&gt;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; vertical-align: top; float: right; padding-top: 0.5em;"&gt;&lt;input id="RORW" type="button" value="RO&gt;RW"&gt;&amp;nbsp;&lt;input type="button" value="Clear"&gt;&amp;nbsp;&lt;input type="button" value="Store"&gt;&amp;nbsp;&lt;input type="button" value="Restore"&gt;&amp;nbsp;&lt;a id="downloader" href="missing" download="missing" target="_blank"&gt;&lt;input type="button" value="Save"&gt;&lt;/a&gt;&lt;/span&gt;&lt;hr style="font-size: medium;"&gt;&lt;div id="content" style="font-size: medium;"&gt;&lt;div id="b0"&gt;[0]:&lt;span class="box1" style="width: 1167.91px;"&gt;&lt;textarea id="b0_in" class="box0" rows="1" cols="110" style="width: 992.719px; height: 17px;"&gt;&lt;/textarea&gt;&lt;input type="button" value="go"&gt;&lt;input type="button" value="txt"&gt;&lt;input type="button" value="clr"&gt;&lt;input type="button" value="-"&gt;&lt;div&gt;&lt;textarea id="b0_val" class="box2" rows="1" cols="110" style="width: 992.719px; height: 17px;"&gt;&lt;/textarea&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;&lt;p style="margin: 0.75em;"&gt;&lt;/p&gt;&lt;/div&gt;&lt;hr style="font-size: medium;"&gt;&lt;input type="button" value="go last"&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; width: 0.2em;"&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="add"&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; width: 0.2em;"&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="go-add"&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; width: 0.6em;"&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="go all"&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="font-size: medium; display: inline-block; width: 194.641px;"&gt;&lt;/span&gt;&lt;span style="font-size: medium;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="delete"&gt;&lt;span style="font-size: medium;"&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Description of elements&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;b&gt;Top elements&lt;/b&gt;&lt;/div&gt;&lt;b&gt;js8&lt;/b&gt; - name of the html file (with ".html" removed)&lt;br&gt;&lt;div&gt;buttons:&lt;/div&gt;&lt;div&gt;add - add a new interaction unit (these consist of a javascript/html input and possibly a resultant output)&lt;/div&gt;&lt;div&gt;RO&amp;gt;RW / RW&amp;gt;RO - make read-write(RW) / read-only(RO), this is a toggle; Helps use of links in html text&lt;/div&gt;&lt;div&gt;Clear - clears out all content&lt;/div&gt;&lt;div&gt;Store - saves copy of content (within the page's data, not in a file)&lt;/div&gt;&lt;div&gt;Restore - restores saved copy of content&lt;/div&gt;&lt;div&gt;Save - Save to file (functions like downloading a file)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Interaction units&lt;/b&gt; - may be many of these&lt;/div&gt;&lt;div&gt;[n] - numbered id of unit&lt;/div&gt;&lt;div&gt;input text box - place to enter javascript code or html input; Below this may be an output value in a box or unboxed html rendering&lt;/div&gt;&lt;div&gt;output appears below input; is boxed if it is the result of evaluation; only appears after evaluation or "txt" is clicked; html output will be read-only in RO mode&lt;/div&gt;&lt;div&gt;&lt;span style="font-size: 1em;"&gt;buttons:&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;go - eval input and put result (string version of) in output box below the input box&lt;/div&gt;&lt;div&gt;txt - show input text via html rendering below input box&lt;/div&gt;&lt;div&gt;clr - clear the output box (switch to eval output); will create output box if it doesn't exist&lt;/div&gt;&lt;div&gt;- / + - toggle visibility of input box and go/txt/clr buttons; with html rendering hides the html markup&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Bottom elements&lt;/b&gt;&lt;/div&gt;&lt;div&gt;buttons:&lt;/div&gt;&lt;div&gt;go last - eval last input and show result&lt;/div&gt;&lt;div&gt;add - add another interaction unit&lt;/div&gt;&lt;div&gt;go-add - Same as "go last" followed by "add"&lt;/div&gt;&lt;div&gt;go all - go through all interaction&amp;nbsp;units evaluating and showing the results; if first non-blank character of the input is "&amp;lt;", then input is considered html&lt;/div&gt;&lt;div&gt;delete - delete the last interaction unit&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Special functions available in javascript code&lt;/b&gt;&lt;/div&gt;&lt;div&gt;str(n) - nth output as string&lt;/div&gt;&lt;div&gt;res(n) - nth output value&lt;/div&gt;&lt;div&gt;expr(n) - nth input value as string&lt;/div&gt;&lt;div&gt;last() - previous output value or string&lt;/div&gt;&lt;div&gt;final() - very last output value&lt;/div&gt;&lt;div&gt;put(s) - appends s to output area for current executing javascript code; like printing to output box&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;div&gt;A few additional notes:&lt;br&gt;Outputs are produced by the default rules for converting values to strings ("toString").&lt;br&gt;Need to assign global functions ("fn = function fn() ...").&lt;br&gt;Browser save loses changes and functionality.&lt;br&gt;When RW, the txt html outputs can be edited (but, the "source" will not be updated).&lt;br&gt;HTML output update requires click of txt button.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</textarea><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><div><div><b>Documentation for js.html</b><br><div><br></div><div><b>Screenshot ...</b></div><br><hr><div><br></div><div><div><span id="heading" style="display: inline-block;">js8</span><span style="font-size: medium;">&nbsp;</span><span style="font-size: medium; display: inline-block; width: 129.766px;"></span><span style="font-size: medium;">&nbsp;</span><input type="button" value="add"><span style="font-size: medium;"></span><span style="font-size: medium; display: inline-block; vertical-align: top; float: right; padding-top: 0.5em;"><input id="RORW" type="button" value="RO>RW">&nbsp;<input type="button" value="Clear">&nbsp;<input type="button" value="Store">&nbsp;<input type="button" value="Restore">&nbsp;<a id="downloader" href="missing" download="missing" target="_blank"><input type="button" value="Save"></a></span><hr style="font-size: medium;"><div id="content" style="font-size: medium;"><div id="b0">[0]:<span class="box1" style="width: 1167.91px;"><textarea id="b0_in" class="box0" rows="1" cols="110" style="width: 992.719px; height: 17px;">(1+Math.sqrt(5))/2</textarea><input type="button" value="go"><input type="button" value="txt"><input type="button" value="clr"><input type="button" value="-"><div><textarea id="b0_val" class="box2" rows="1" cols="110" style="width: 992.719px; height: 17px;">1.618033988749895</textarea></div></span></div><p style="margin: 0.75em;"></p></div><hr style="font-size: medium;"><input type="button" value="go last"><span style="font-size: medium;">&nbsp;</span><span style="font-size: medium; display: inline-block; width: 0.2em;"></span><span style="font-size: medium;">&nbsp;</span><input type="button" value="add"><span style="font-size: medium;">&nbsp;</span><span style="font-size: medium; display: inline-block; width: 0.2em;"></span><span style="font-size: medium;">&nbsp;</span><input type="button" value="go-add"><span style="font-size: medium;">&nbsp;</span><span style="font-size: medium; display: inline-block; width: 0.6em;"></span><span style="font-size: medium;">&nbsp;</span><input type="button" value="go all"><span style="font-size: medium;">&nbsp;</span><span style="font-size: medium; display: inline-block; width: 194.641px;"></span><span style="font-size: medium;">&nbsp;</span><input type="button" value="delete"><span style="font-size: medium;"></span><br></div></div><div><br></div><br><hr><br><br><div><b>Description of elements</b></div><div><br><b>Top elements</b></div><b>js8</b> - name of the html file (with ".html" removed)<br><div>buttons:</div><div>add - add a new interaction unit (these consist of a javascript/html input and possibly a resultant output)</div><div>RO&gt;RW / RW&gt;RO - make read-write(RW) / read-only(RO), this is a toggle; Helps use of links in html text</div><div>Clear - clears out all content</div><div>Store - saves copy of content (within the page's data, not in a file)</div><div>Restore - restores saved copy of content</div><div>Save - Save to file (functions like downloading a file)</div><div><br></div><div><b>Interaction units</b> - may be many of these</div><div>[n] - numbered id of unit</div><div>input text box - place to enter javascript code or html input; Below this may be an output value in a box or unboxed html rendering</div><div>output appears below input; is boxed if it is the result of evaluation; only appears after evaluation or "txt" is clicked; html output will be read-only in RO mode</div><div><span style="font-size: 1em;">buttons:</span><br></div><div>go - eval input and put result (string version of) in output box below the input box</div><div>txt - show input text via html rendering below input box</div><div>clr - clear the output box (switch to eval output); will create output box if it doesn't exist</div><div>- / + - toggle visibility of input box and go/txt/clr buttons; with html rendering hides the html markup</div><div><br></div><div><b>Bottom elements</b></div><div>buttons:</div><div>go last - eval last input and show result</div><div>add - add another interaction unit</div><div>go-add - Same as "go last" followed by "add"</div><div>go all - go through all interaction&nbsp;units evaluating and showing the results; if first non-blank character of the input is "&lt;", then input is considered html</div><div>delete - delete the last interaction unit</div><div><br></div><div><b>Special functions available in javascript code</b></div><div>str(n) - nth output as string</div><div>res(n) - nth output value</div><div>expr(n) - nth input value as string</div><div>last() - previous output value or string</div><div>final() - very last output value</div><div>put(s) - appends s to output area for current executing javascript code; like printing to output box</div><div><br><div><div>A few additional notes:<br>Outputs are produced by the default rules for converting values to strings ("toString").<br>Need to assign global functions ("fn = function fn() ...").<br>Browser save loses changes and functionality.<br>When RW, the txt html outputs can be edited (but, the "source" will not be updated).<br>HTML output update requires click of txt button.</div><div><br></div><div><br></div></div></div></div></div></span></div><p style="margin: 0.75em;"></p></div>
-
-<hr>
-
-<input type="button" value="go last" onclick="button_flash(golast_block,event,this);">
-
-<span style="display:inline-block;width:.2em"></span>
-<input type="button" value="add" onclick="add_block(event,this);">
-
-<span style="display:inline-block;width:.2em"></span>
-<input type="button" value="go-add" onclick="button_flash(goadd_block,event,this);">
-
-<span style="display:inline-block;width: .6em"></span>
-<input type="button" value="go all" onclick="button_flash(do_all,event,this);">
-
-<span style="display:inline-block;width:15%;"></span>
-<input type="button" value="delete" onclick="deletelast_block(event,this);">
-
-<p style="height: 10em"></p>
-
 <script id="mainscript" language="JavaScript" type="text/javascript"><!--
 var idcntr=0;
 var blkid=null;
 var title;
 var values = [];
 var curout = null;
+var evalfn = eval;
 
-title = decodeURIComponent(document.URL.match(/\/([^\.\/]*)[^\/]*$/)[1]) || 'JS';
-document.getElementById('heading').innerHTML = title;
-document.getElementsByTagName("title")[0].innerHTML = title;
 
-idcntr = 0;
-while (true) {
-  b = document.getElementById("b"+idcntr);
-  if (b === null) { break; }
-  blk_resizing(b);
-  idcntr++;
+function pagestartup() {
+  title = decodeURIComponent(document.URL.match(/\/([^\.\/]*)[^\/]*$/)[1]) || 'JS';
+  document.getElementById('heading').innerHTML = title;
+  document.getElementsByTagName("title")[0].innerHTML = title;
+
+  idcntr = 0;
+  while (true) {
+    b = document.getElementById("b"+idcntr);
+    if (b === null) { break; }
+    blk_resizing(b);
+    idcntr++;
+  }
+  document.getElementById("downloader").href = "missing";
+  document.getElementById("downloader").download = "missing";
 }
-document.getElementById("downloader").href = "missing";
-document.getElementById("downloader").download = "missing";
 
 function textarearesize(ta) {
   var h,a,y,ny;
@@ -149,10 +121,10 @@ function blkresize(b) {
   var d,e;
   d = b.childNodes[1];
   if (6<=d.childNodes.length) {
-    e = d.childNodes[0];
+    e = d.childNodes[5];
     if ("TEXTAREA" === e.nodeName) { textarearesize(e); }
-    if (1<=d.childNodes[5].childNodes.length) {
-      e = d.childNodes[5].childNodes[0];
+    if (1<=d.childNodes[6].childNodes.length) {
+      e = d.childNodes[6].childNodes[0];
       if ("TEXTAREA" === e.nodeName) { textarearesize(e); }
     }
   }
@@ -177,10 +149,10 @@ function blk_resizing(b) {
   var d,e;
   d = b.childNodes[1];
   if (6<=d.childNodes.length) {
-    e = d.childNodes[0];
+    e = d.childNodes[5];
     if ("TEXTAREA" === e.nodeName) { textarea_resizing(e); }
-    if (1<=d.childNodes[5].childNodes.length) {
-      e = d.childNodes[5].childNodes[0];
+    if (1<=d.childNodes[6].childNodes.length) {
+      e = d.childNodes[6].childNodes[0];
       if ("TEXTAREA" === e.nodeName) { textarea_resizing(e); }
     }
   }
@@ -210,11 +182,12 @@ function add_block(ev,th) {
   c = document.getElementById('content');
   idnum = idcntr;
   idcntr++;
-txt = '['+idnum+']:<span class="box1"><textarea id="b'+idnum+'_in" class="box0" rows=1 cols=110></textarea>\
-<input type="button" value="go" onclick="button_flash(go_block,event,this);">\
+txt = '['+idnum+']:&nbsp;<span class="box1">\
+<input type="button" value="go" onclick="button_flash(go_block,event,this);" class="">\
 <input type="button" value="txt" onclick="show_block(event,this);">\
 <input type="button" value="clr" onclick="clr_block(event,this);">\
-<input type="button" value="-" onclick="vis_block(event,this);">\
+<input type="button" value="-" onclick="vis_block(event,this);"><br>\
+<textarea id="b'+idnum+'_in" class="box0" rows=1 cols=110></textarea>\
 <div></div></span>';
   d = document.createElement("DIV");
   d.id = "b"+idnum;
@@ -225,7 +198,7 @@ txt = '['+idnum+']:<span class="box1"><textarea id="b'+idnum+'_in" class="box0" 
   c.appendChild(x);
   values[idnum] = undefined;
   blk_resizing(d);
-  d.childNodes[1].childNodes[0].focus();
+  d.childNodes[1].childNodes[5].focus();
   return undefined;
 }
 
@@ -256,7 +229,7 @@ function put(s) {
 function eval_script(scr) {
   var val,errmsg;
   try {
-    val = eval(scr);
+    val = evalfn(scr);
   } catch (errmsg) {
     val = "Error: " + errmsg;
   }
@@ -265,9 +238,9 @@ function eval_script(scr) {
 
 function eval_block(blk) {
   var scr,val,e,x,b,d;
-  scr = blk.childNodes[1].childNodes[0].value;
+  scr = blk.childNodes[1].childNodes[5].value;
   blkid = blk.id;
-  d = blk.childNodes[1].childNodes[5];
+  d = blk.childNodes[1].childNodes[6];
   if (1<=d.childNodes.length && d.childNodes[0].id === undefined) {
     d.innerHTML = "";
   }
@@ -279,7 +252,7 @@ function eval_block(blk) {
     x.cols = 110;
     d.appendChild(x);
     textarea_resizing(x);
- } else {
+  } else {
     x = d.childNodes[0];
   }
   x.value = "";
@@ -294,28 +267,29 @@ function eval_block(blk) {
 }
 
 function button_flash(fn,ev,th) {
-  th.style.backgroundColor = "SkyBlue";
-  setTimeout(function() { fn(ev,th); }, 1);
+  th.className = "buttonactive";
+  setTimeout(function() { fn(ev,th); }, 20);
 }
+
+function button_active(th) { th.className = "buttonactive"; }
+function button_reset(th) { th.className = ""; }
 
 function go_block(ev,th) {
   var blk,txt,d;
-  th.style.backgroundColor = "SkyBlue";
   blk = th.parentNode.parentNode;
   eval_block(blk);
-  th.style.backgroundColor = "";
+  button_reset(th);
 }
 
 function golast_block(ev,th) {
   var blk,txt,d;
-  th.style.backgroundColor = "SkyBlue";
   blk = document.getElementById("b"+(idcntr-1));
   if (null === blk) {
-    th.style.backgroundColor = "";
+    button_reset(th);
     return;
   }
   eval_block(blk);
-  th.style.backgroundColor = "";
+  button_reset(th);
 }
 
 function goadd_block(ev,th) {
@@ -325,24 +299,24 @@ function goadd_block(ev,th) {
 
 function show_block(ev,th) {
   var txt,d;
-  txt = th.parentNode.childNodes[0].value;
-  d = th.parentNode.childNodes[5];
+  txt = th.parentNode.childNodes[5].value;
+  d = th.parentNode.childNodes[6];
   d.innerHTML = txt;
   return undefined;
 }
 
 function clr_block(ev,th) {
   var t,d,x,p;
-  d = th.parentNode.childNodes[5];
+  d = th.parentNode.childNodes[6];
   if (1<=d.childNodes.length && (d.childNodes[0].id === "" || d.childNodes[0].id === undefined)) {
-    d.innerHTML = "";t
+    d.innerHTML = "";
   }
   if (d.childNodes.length<1) {
     x = document.createElement("TEXTAREA");
     x.id = blkid + "_val";
+    x.className = "box2";
     x.rows = 1;
     x.cols = 110;
-    x.className = "box2";
     d.appendChild(x);
   } else {
     x = d.childNodes[0];
@@ -350,30 +324,30 @@ function clr_block(ev,th) {
   x.value = "";
   textarearesize(x);
   p = th.parentNode;
-  t = p.childNodes[0];
+  t = p.childNodes[5];
   t.className = "box0";
+  p.childNodes[0].className = "";
   p.childNodes[1].className = "";
   p.childNodes[2].className = "";
-  p.childNodes[3].className = "";
-  p.childNodes[4].value = "-";
+  p.childNodes[3].value = "-";
 }
 
 function vis_block(ev,th) {
   var t,p;
   p = th.parentNode;
-  t = p.childNodes[0];
+  t = p.childNodes[5];
   if ("box0" === t.className) {
     t.className = "hidden";
+    p.childNodes[0].className = "hidden";
     p.childNodes[1].className = "hidden";
     p.childNodes[2].className = "hidden";
-    p.childNodes[3].className = "hidden";
-    p.childNodes[4].value = "+";
+    p.childNodes[3].value = "+";
   } else {
     t.className = "box0";
+    p.childNodes[0].className = "";
     p.childNodes[1].className = "";
     p.childNodes[2].className = "";
-    p.childNodes[3].className = "";
-    p.childNodes[4].value = "-";
+    p.childNodes[3].value = "-";
   }
   blkresize(p.parentNode);
 }
@@ -386,7 +360,7 @@ function str(n) {
     if (null === e) {
       return "";
     } else {
-      return e.childNodes[1].childNodes[0].value;
+      return e.childNodes[1].childNodes[5].value;
     }
   } else {
     return e.value;
@@ -422,7 +396,7 @@ function expr(n) {
   if (null === e) {
     return ""
   } else {
-    return e.childNodes[1].childNodes[0].value;
+    return e.childNodes[1].childNodes[5].value;
   }
 }
 
@@ -481,20 +455,19 @@ function restore_content(ev,th) {
 
 function do_all(ev,th) {
   var blk,txt,d,index,v;
-  th.style.backgroundColor = "SkyBlue";
   for (index=0; index<idcntr; index++) {
     blk = document.getElementById("b"+index);
     if (null === blk) { continue; }
-    d = blk.childNodes[1].childNodes[0];
+    d = blk.childNodes[1].childNodes[5];
     txt = d.value;
     v = document.getElementById("b"+index+"_val");
     if (! txt.match(/^</) || (null != v && "TEXTAREA" === v.nodeName)) {
       eval_block(blk);
     } else {
-      d.parentNode.childNodes[5].innerHTML = txt;
+      d.parentNode.childNodes[6].innerHTML = txt;
     }
   }
-  th.style.backgroundColor = "";
+  button_reset(th);
 }
 
 function update_all() {
@@ -502,7 +475,7 @@ function update_all() {
   for (index=0; index<idcntr; index++) {
     blk = document.getElementById("b"+index);
     if (null === blk) { continue; }
-    d = blk.childNodes[1].childNodes[0];
+    d = blk.childNodes[1].childNodes[5];
     d.textContent = d.value;
     v = document.getElementById("b"+index+"_val");
     if (null != v && "TEXTAREA" === v.nodeName) {
@@ -510,6 +483,259 @@ function update_all() {
     }
   }
 }
+--></script>
+</head>
+<body>
+
+<span id="heading" style="display:inline-block;margin-bottom: .5em;">js10gl</span>
+
+<span style="display:inline-block;float:right;margin-top: .8em;">
+<input id="RORW" type="button" value="RW>RO" onclick="toggle_rw(event,this);">
+<input type="button" value="clear" onclick="clear_content(event,this);">
+<input type="button" value="store" onclick="store_content(event,this);">
+<input type="button" value="restore" onclick="restore_content(event,this);">
+<a id="downloader" href="missing" download="missing" target="_blank"><input type="button" value="save" onclick="store_content(event,this);"></a>
+</span>
+<br>
+
+<input type="button" value="add" onclick="add_block(event,this);" style="margin-top: .8em; margin-bottom: .5em;">
+
+<div id="content" contenteditable="true"><div id="b0">[0]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b0_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;p&gt;
+&lt;b&gt;Documentation for js.html&lt;/b&gt;&lt;br&gt;
+&lt;br&gt;
+This is a self-contained Javascript Notebook (inspired by Jupyter Notebooks).
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Appearance of an example notebook ...&lt;/b&gt;
+&lt;br&gt;
+&lt;hr&gt;
+
+&lt;span id="heading" style="font-size: 1.3em; font-weight: bold; padding-top: 0.5em; color: rgb(51, 51, 51); font-family: Arial; display: inline-block; margin-bottom: 0.5em;"&gt;jsX&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; float: right; margin-top: 0.8em;"&gt;&lt;input id="RORW" type="button" value="RW&gt;RO"&gt;&amp;nbsp;&lt;input type="button" value="clear"&gt;&amp;nbsp;&lt;input type="button" value="store"&gt;&amp;nbsp;&lt;input type="button" value="restore"&gt;&amp;nbsp;&lt;a id="downloader" href="file:///media/removable/TCWdrive/stuff/missing" download="missing" target="_blank"&gt;&lt;input type="button" value="save"&gt;&lt;/a&gt;&lt;/span&gt;&lt;br style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&lt;input type="button" value="add" style="margin-top: 0.8em; margin-bottom: 0.5em;"&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&lt;/span&gt;&lt;div id="content" style="padding-top: 0.5em; color: rgb(51, 51, 51); font-family: Arial;"&gt;&lt;div id="b0"&gt;[0]:&amp;nbsp;&lt;span class="box1" style="display: inline-block; width: 693.391px; vertical-align: top;"&gt;&lt;input type="button" value="go" class=""&gt;&lt;input type="button" value="txt"&gt;&lt;input type="button" value="clr"&gt;&lt;input type="button" value="-"&gt;&lt;br&gt;&lt;textarea id="b0_in" class="box0" rows="1" cols="110" style="vertical-align: text-top; font-size: 1.1em; border-style: inset; border-color: rgb(170, 170, 170); width: 658.719px; margin: 1px; min-height: 1em; resize: none; height: 17px;"&gt;(1+Math.sqrt(5))/2&lt;/textarea&gt;&lt;div&gt;&lt;textarea id="b0_val" class="box2" rows="1" cols="110" style="font-size: 1.1em; border-style: inset; border-color: rgb(170, 170, 170); width: 658.719px; margin: 1px; min-height: 1em; resize: none; height: 17px;"&gt;1.618033988749895&lt;/textarea&gt;&lt;/div&gt;&lt;/span&gt;&lt;/div&gt;&lt;p style="margin: 0.75em;"&gt;&lt;/p&gt;&lt;/div&gt;&lt;input type="button" value="go last" class=""&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"&gt;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="add"&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"&gt;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="go-add" class=""&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"&gt;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="go all" class=""&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 115.562px;"&gt;&lt;/span&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&amp;nbsp;&lt;/span&gt;&lt;input type="button" value="delete"&gt;&lt;span style="color: rgb(51, 51, 51); font-family: Arial;"&gt;&lt;/span&gt;&lt;div&gt;&lt;br style="color: rgb(0, 0, 0); font-family: Tinos;"&gt;&lt;/div&gt;
+
+&lt;br&gt;
+&lt;hr&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;div&gt;
+&lt;b&gt;Description of elements&lt;/b&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;
+&lt;b&gt;Top elements&lt;/b&gt;
+&lt;/div&gt;
+&lt;b&gt;jsX&lt;/b&gt;
+ - name of the html file (with ".html" removed)&lt;br&gt;
+&lt;div&gt;
+buttons:&lt;/div&gt;
+&lt;div&gt;
+add - add a new interaction unit (these consist of a javascript/html input and possibly a resultant output)&lt;/div&gt;
+&lt;div&gt;
+RO&amp;gt;RW / RW&amp;gt;RO - make read-write(RW) / read-only(RO), this is a toggle; Helps clicking links in html text&lt;/div&gt;
+&lt;div&gt;
+clear - clears out all content&lt;/div&gt;
+&lt;div&gt;
+store - saves copy of content (within the page's data, not in a file)&lt;/div&gt;
+&lt;div&gt;
+restore - restores saved copy of content&lt;/div&gt;
+&lt;div&gt;
+save - Save to file (functions like downloading a file);
+For Chrome browser, want "Ask where to save each file before downloading" turned on (exact behavior varies with OS and browser)
+&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;b&gt;Interaction units&lt;/b&gt;
+ - there may be many of these&lt;/div&gt;
+&lt;div&gt;
+[n] - numbered id of unit&lt;/div&gt;
+&lt;div&gt;
+input text box - place to enter javascript code or html input; Below this may be an output value in a box or unboxed html rendering;&lt;/div&gt;
+&lt;div&gt;
+output appears below input and is boxed if it is the result of evaluation; only appears after "go" or "txt" is clicked; html output will be read-only in RO mode&lt;/div&gt;
+&lt;div&gt;
+&lt;span style="font-size: 1em;"&gt;
+buttons:&lt;/span&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div&gt;
+go - eval input and put result (string version of) in output box below the input box&lt;/div&gt;
+&lt;div&gt;
+txt - show input text via html rendering below input box&lt;/div&gt;
+&lt;div&gt;
+clr - clear the output box (switch to eval output); will create output box if it doesn't exist&lt;/div&gt;
+&lt;div&gt;
+- / + - toggle visibility of input box and go/txt/clr buttons; with html rendering hides the html markup&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;b&gt;Bottom elements&lt;/b&gt;
+&lt;/div&gt;
+&lt;div&gt;
+buttons:&lt;/div&gt;
+&lt;div&gt;
+go last - eval last input and show result&lt;/div&gt;
+&lt;div&gt;
+add - add another interaction unit&lt;/div&gt;
+&lt;div&gt;
+go-add - Same as "go last" followed by "add"&lt;/div&gt;
+&lt;div&gt;
+go all - go through all interaction&amp;nbsp;units evaluating and showing the results; if first non-blank character of the input is "&amp;lt;", then input is considered html&lt;/div&gt;
+&lt;div&gt;
+delete - delete the last interaction unit&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;b&gt;Special functions available in javascript code&lt;/b&gt;
+&lt;/div&gt;
+&lt;div&gt;
+str(n) - nth output as string&lt;/div&gt;
+&lt;div&gt;
+res(n) - nth output value (not stringified)&lt;/div&gt;
+&lt;div&gt;
+expr(n) - nth input value as string&lt;/div&gt;
+&lt;div&gt;
+last() - previous output value or string (not stringified)&lt;/div&gt;
+&lt;div&gt;
+final() - very last output value (not stringified)&lt;/div&gt;
+&lt;div&gt;
+put(str) - appends value of str to output area for current executing javascript code; like printing to output box&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;
+&lt;div&gt;
+&lt;div&gt;
+A few additional notes:&lt;br&gt;
+Outputs are produced by the default rules for converting values to strings ("toString").&lt;br&gt;
+Evaluation is done with global context. Function definitions will be global.&lt;br&gt;
+Browser save ("Save page as ...") loses changes and functionality. Make sure to use the Save button.&lt;br&gt;
+HTML output/rendering only updated when the txt button is clicked.&lt;/div&gt;
+When RW, the html outputs can be edited (but the "source" will not be updated). Changes will be preserved by saving.&lt;br&gt;
+(The CSS/JS content of this page can be moved to separate files to make very small working pages.)&lt;br&gt;
+You can paste text data into an input box and refer to it elsewhere using expr().&lt;br&gt;
+&lt;div&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+</textarea><div><p>
+<b>Documentation for js.html</b><br>
+<br>
+This is a self-contained Javascript Notebook (inspired by Jupyter Notebooks).
+<br>
+<br>
+<b>Appearance of an example notebook ...</b>
+<br>
+</p><hr>
+
+<span id="heading" style="font-size: 1.3em; font-weight: bold; padding-top: 0.5em; color: rgb(51, 51, 51); font-family: Arial; display: inline-block; margin-bottom: 0.5em;">jsX</span><span style="color: rgb(51, 51, 51); font-family: Arial;"></span><span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; float: right; margin-top: 0.8em;"><input id="RORW" type="button" value="RW>RO">&nbsp;<input type="button" value="clear">&nbsp;<input type="button" value="store">&nbsp;<input type="button" value="restore">&nbsp;<a id="downloader" href="file:///media/removable/TCWdrive/stuff/missing" download="missing" target="_blank"><input type="button" value="save"></a></span><br style="color: rgb(51, 51, 51); font-family: Arial;"><input type="button" value="add" style="margin-top: 0.8em; margin-bottom: 0.5em;"><span style="color: rgb(51, 51, 51); font-family: Arial;"></span><div id="content" style="padding-top: 0.5em; color: rgb(51, 51, 51); font-family: Arial;"><div id="b0">[0]:&nbsp;<span class="box1" style="display: inline-block; width: 693.391px; vertical-align: top;"><input type="button" value="go" class=""><input type="button" value="txt"><input type="button" value="clr"><input type="button" value="-"><br><textarea id="b0_in" class="box0" rows="1" cols="110" style="vertical-align: text-top; font-size: 1.1em; border-style: inset; border-color: rgb(170, 170, 170); width: 658.719px; margin: 1px; min-height: 1em; resize: none; height: 17px;">(1+Math.sqrt(5))/2</textarea><div><textarea id="b0_val" class="box2" rows="1" cols="110" style="font-size: 1.1em; border-style: inset; border-color: rgb(170, 170, 170); width: 658.719px; margin: 1px; min-height: 1em; resize: none; height: 17px;">1.618033988749895</textarea></div></span></div><p style="margin: 0.75em;"></p></div><input type="button" value="go last" class=""><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"></span><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><input type="button" value="add"><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"></span><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><input type="button" value="go-add" class=""><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 0.2em;"></span><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><input type="button" value="go all" class=""><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><span style="color: rgb(51, 51, 51); font-family: Arial; display: inline-block; width: 115.562px;"></span><span style="color: rgb(51, 51, 51); font-family: Arial;">&nbsp;</span><input type="button" value="delete"><span style="color: rgb(51, 51, 51); font-family: Arial;"></span><div><br style="color: rgb(0, 0, 0); font-family: Tinos;"></div>
+
+<br>
+<hr>
+<br><br>
+<div>
+<b>Description of elements</b>
+</div>
+<div><br>
+<b>Top elements</b>
+</div>
+<b>jsX</b>
+ - name of the html file (with ".html" removed)<br>
+<div>
+buttons:</div>
+<div>
+add - add a new interaction unit (these consist of a javascript/html input and possibly a resultant output)</div>
+<div>
+RO&gt;RW / RW&gt;RO - make read-write(RW) / read-only(RO), this is a toggle; Helps clicking links in html text</div>
+<div>
+clear - clears out all content</div>
+<div>
+store - saves copy of content (within the page's data, not in a file)</div>
+<div>
+restore - restores saved copy of content</div>
+<div>
+save - Save to file (functions like downloading a file);
+For Chrome browser, want "Ask where to save each file before downloading" turned on (exact behavior varies with OS and browser)
+</div>
+<div><br></div>
+<div>
+<b>Interaction units</b>
+ - there may be many of these</div>
+<div>
+[n] - numbered id of unit</div>
+<div>
+input text box - place to enter javascript code or html input; Below this may be an output value in a box or unboxed html rendering;</div>
+<div>
+output appears below input and is boxed if it is the result of evaluation; only appears after "go" or "txt" is clicked; html output will be read-only in RO mode</div>
+<div>
+<span style="font-size: 1em;">
+buttons:</span><br>
+</div>
+<div>
+go - eval input and put result (string version of) in output box below the input box</div>
+<div>
+txt - show input text via html rendering below input box</div>
+<div>
+clr - clear the output box (switch to eval output); will create output box if it doesn't exist</div>
+<div>
+- / + - toggle visibility of input box and go/txt/clr buttons; with html rendering hides the html markup</div>
+<div><br></div>
+<div>
+<b>Bottom elements</b>
+</div>
+<div>
+buttons:</div>
+<div>
+go last - eval last input and show result</div>
+<div>
+add - add another interaction unit</div>
+<div>
+go-add - Same as "go last" followed by "add"</div>
+<div>
+go all - go through all interaction&nbsp;units evaluating and showing the results; if first non-blank character of the input is "&lt;", then input is considered html</div>
+<div>
+delete - delete the last interaction unit</div>
+<div><br></div>
+<div>
+<b>Special functions available in javascript code</b>
+</div>
+<div>
+str(n) - nth output as string</div>
+<div>
+res(n) - nth output value (not stringified)</div>
+<div>
+expr(n) - nth input value as string</div>
+<div>
+last() - previous output value or string (not stringified)</div>
+<div>
+final() - very last output value (not stringified)</div>
+<div>
+put(str) - appends value of str to output area for current executing javascript code; like printing to output box</div>
+<div><br>
+<div>
+<div>
+A few additional notes:<br>
+Outputs are produced by the default rules for converting values to strings ("toString").<br>
+Evaluation is done with global context. Function definitions will be global.<br>
+Browser save ("Save page as ...") loses changes and functionality. Make sure to use the Save button.<br>
+HTML output/rendering only updated when the txt button is clicked.</div>
+When RW, the html outputs can be edited (but the "source" will not be updated). Changes will be preserved by saving.<br>
+(The CSS/JS content of this page can be moved to separate files to make very small working pages.)<br>
+You can paste text data into an input box and refer to it elsewhere using expr().<br>
+<div><br>
+</div>
+<div><br></div>
+</div></div>
+</div></span></div><p style="margin: 0.75em;"></p><div id="b1">[1]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b1_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;p&gt;You can use the clear button to eliminate the documentation and create an empty notebook.</textarea><div><p>You can use the clear button to eliminate the documentation and create an empty notebook.</p></div></span></div><p style="margin: 0.75em;"></p></div>
+
+<input type="button" value="go last" onclick="button_flash(golast_block,event,this);" class="">
+
+<span style="display:inline-block;width:.2em"></span>
+<input type="button" value="add" onclick="add_block(event,this);">
+
+<span style="display:inline-block;width:.2em"></span>
+<input type="button" value="go-add" onclick="button_flash(goadd_block,event,this);" class="">
+
+<span style="display:inline-block;width: .2em"></span>
+<input type="button" value="go all" onclick="button_flash(do_all,event,this);" class="">
+
+<span style="display:inline-block;width:15%;"></span>
+<input type="button" value="delete" onclick="deletelast_block(event,this);">
+
+<p style="height: 10em"></p>
+
+<script language="JavaScript" type="text/javascript">
+pagestartup();
 --></script>
 
 </body></html>
